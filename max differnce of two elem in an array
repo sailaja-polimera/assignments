@@ -1,26 +1,60 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+int Max_diff=0;
+    int arr[5]={5,10,9,6,9};
+    int i,j,diff=0,max_diff=0;
+    int a,b;
+    for(i=0;i<5;i++)
+    {
+        for(j=1;j<5;j++)
+        {
+            
+            
+            if(abs(arr[i]-arr[j])>diff)
+            {
+               
+                diff=abs(arr[i]-arr[j]);
+                a=arr[i];
+                b=arr[j];
+            
+            
+            }
+        }
+    }
+   printf("max diff is %d %d %d",abs(diff),a,b);
 
-int main() {
- int a[20],sum=0,n;
-  printf("enter the no of elements and elements in a matrix: ");
 
- scanf("%d",&n);
- for(int i=0;i<n;i++)
- {
- scanf("%d",&a[i]);
 }
-for(int i=0;i<n;i++)
- {
-     for(int j=0;j<n;j++)
-     {
-         if(sum>a[i]-a[j])
-         {
-             sum=a[i]-a[j];
-         }
-     }
- }
-     printf("the maximum difference is:%d ",abs(sum));
-  return 0;
+ method 2:without absolute funct
+ 
+ #include<stdio.h>
+int main()
+{
+int Max_diff=0;
+    int arr[5]={5,10,9,6,9};
+    int i,j,diff=0,max_diff=0;
+    int a,b;
+    for(i=0;i<5;i++)
+    {
+        for(j=0;j<5;j++)
+        {
+            
+            
+            if(arr[i]-arr[j]>diff)
+            {
+               
+                diff=arr[i]-arr[j];
+                a=arr[i];
+                b=arr[j];
+            
+            
+            }
+        }
+    }
+   printf("max diff is %d %d %d",diff,a,b);
+
+
 }
   
