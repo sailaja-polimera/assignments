@@ -51,7 +51,7 @@ int main()
        else
         {
          unsigned char data = 2;
-         data = (((data & 0x0F)<<4));
+        data = (((data & 0x0F)<<4))| (((data & 0xF0)>>4));
          printf("After swapping nibble in a byte:%u\n", data);
         }
        return 0;
