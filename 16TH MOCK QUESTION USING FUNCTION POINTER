@@ -1,0 +1,58 @@
+1.Declare a struct with 10 char elements and an interger variable 
+compare 2 variables of the  struct , which on heap 
+If they are same : 
+          Write program to reverse the last 5 characters in a string - use fn ptr 
+If they are not equal :
+          Write program to swap first 4 bits with last 4 bits in a character variable
+
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+struct stu{
+    char name[10];
+    int roll;
+};
+char reve(char str[10],int n,int l)
+{
+for(int i=0;i<n/2;i++)
+        {
+          char temp=str[l-n+i];
+          str[l-n+i]=str[l-i-1];
+          str[l-i-1]=temp;
+        }
+          printf("After reversing last n characters are:\n");
+          for(int i=0;i<l;i++)
+          printf("%c",str[i]);
+        }
+int main()
+   {
+      char str[10];
+      int l,n;
+      struct stu *s1;
+      struct stu *s2;
+      s1=(struct stu *)malloc(sizeof(struct stu));
+      s2=(struct stu *)malloc(sizeof(struct stu));
+      printf("Enter the members of a structures :\n");
+      scanf("%s %d %s %d", s1->name,&s1->roll,s2->name,&s2->roll);
+      printf("The members of a structures are:\n");
+      printf("%s %d %s %d\n",s1->name,s1->roll,s2->name,s2->roll);
+      if((strcmp(s1->name,s2->name)==0)&&(s1->roll ==s2->roll))
+        {
+          
+          printf("Eneter the string to reverse last char:\n");
+          scanf("%s",str);
+          printf("Enter num of last bits to rev:\n");
+          scanf("%d",&n);
+          l=strlen(str);
+            char (*fptr)(char[],int,int);
+            fptr=reve;
+            (*fptr)(str,n,l);
+        }
+       else
+        {
+         unsigned char data = 2;
+         data = (((data & 0x0F)<<4));
+         printf("After swapping nibble in a byte:%u\n", data);
+        }
+       return 0;
+    }
