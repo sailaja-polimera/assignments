@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main()
+{
+    unsigned char data = 2;
+    //swapping nibbles
+    data = (((data & 0x0F)<<4));
+    printf("%u\n", data);
+    return 0;
+}
+
+or
+
+#include <stdio.h>
+int main()
+{
+    int n=8;
+    int s=n*(1<<4);
+    printf("%d",s);
+    return 0;
+}
